@@ -11,6 +11,8 @@
 	align-items: center;
 	justify-items: center;
 	min-height: 100svh;
+	height: fit-content;
+	overflow: visible;
 	padding: 0;
 	gap: 0;
 }
@@ -485,6 +487,7 @@
 	font-size: 1rem;
 	animation: fadeInUp 1.2s 0.6s both;
 	margin-top: 32px;
+	position: relative;
 }
 
 .footer a {
