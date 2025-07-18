@@ -15,25 +15,6 @@
 	--shadow: 0 4px 32px #00ffe71a;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #10131a;
-		--foreground: #f5f6fa;
-		--primary: #00ffe7;
-		--primary-dark: #00bfae;
-		--secondary: #232526;
-		--accent: #3b82f6;
-		--danger: #ea2d2e;
-		--warning: #fbbf24;
-		--success: #22c55e;
-		--muted: #7b8794;
-		--surface: #181c23;
-		--surface-light: #232526;
-		--border: #2d3748;
-		--shadow: 0 4px 32px #00ffe71a;
-	}
-}
-
 html,
 body {
 	max-width: 100vw;

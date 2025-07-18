@@ -1,9 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import {
+	SiGithub,
 	SiJavascript,
 	SiTypescript,
 	SiPython,
+	SiSharp,
 	SiGo,
 	SiPhp,
 	SiRuby,
@@ -29,17 +31,17 @@ import {
 } from "react-icons/si";
 import { IconType } from "react-icons";
 import { VscAzureDevops, VscCode } from "react-icons/vsc";
-import { FaAws } from "react-icons/fa";
-import { BsCode } from "react-icons/bs";
+import { FaAws, FaTag } from "react-icons/fa";
+import { BsCode, BsFillLightningChargeFill } from "react-icons/bs";
+import { FiExternalLink } from "react-icons/fi";
 import { DiJava } from "react-icons/di";
-import { IoCutSharp } from "react-icons/io5";
 
 const skills: { name: string; icon: IconType }[] = [
 	{ name: "JavaScript", icon: SiJavascript },
 	{ name: "TypeScript", icon: SiTypescript },
 	{ name: "Python", icon: SiPython },
 	{ name: "Java", icon: DiJava },
-	{ name: "C#", icon: IoCutSharp },
+	{ name: "C#", icon: SiSharp },
 	{ name: "Go", icon: SiGo },
 	{ name: "PHP", icon: SiPhp },
 	{ name: "Ruby", icon: SiRuby },
@@ -96,6 +98,8 @@ const demoProjects = [
 	},
 ];
 
+const badges = ["React", "Next.js", "React Native", "TypeScript", "Expo", "Full Stack", "Zustand"];
+
 function Icon({ IconComponent, alt }: { IconComponent: IconType; alt: string }) {
 	return (
 		<span className={styles.skillIcon} aria-label={alt}>
@@ -121,29 +125,23 @@ export default function Home() {
 
 			<main className={styles.main} style={{ position: "relative", zIndex: 1 }}>
 				{/* HERO */}
-				<section className={styles.hero} style={{ minHeight: 220 }}>
-					<div
-						className={styles.avatarGlow}
-						style={{ boxShadow: "0 0 64px 16px #00ffe7aa" }}>
+				<section className={styles.hero}>
+					<div className={styles.avatarGlow}>
 						<Image
 							className={styles.avatar}
-							src="/next.svg"
+							src="/memoji.png" // Replace with your actual avatar image
 							alt="Manelisi Mpotulo Avatar"
 							width={110}
 							height={110}
 							priority
-							style={{
-								border: "4px solid var(--primary)",
-								background: "#fff",
-							}}
 						/>
 					</div>
 					<div>
-						<h1 className={styles.title} style={{ fontSize: "2.8rem" }}>
+						<h1 className={styles.title}>
 							Manelisi Mpotulo
 							<span className={styles.futurist}>.dev</span>
 						</h1>
-						<p className={styles.subtitle} style={{ fontSize: "1.2rem" }}>
+						<p className={styles.subtitle}>
 							Software Developer & Technical Problem Solver
 						</p>
 						<p className={styles.location}>Cape Town, South Africa</p>
@@ -157,7 +155,7 @@ export default function Home() {
 
 				{/* ABOUT */}
 				<section className={styles.about}>
-					<h2 style={{ fontSize: "1.3rem", marginBottom: 8 }}>🚀 About Me</h2>
+					<h2 className={styles.aboutTitle}>🚀 About Me</h2>
 					<p>
 						Passionate, detail-oriented developer specializing in{" "}
 						<b>mobile app development</b>, <b>cloud infrastructure</b>, and{" "}
@@ -165,12 +163,11 @@ export default function Home() {
 						user-friendly products with a futuristic, solution-driven approach.
 					</p>
 					<div className={styles.techBadges}>
-						<span>React Native</span>
-						<span>Expo</span>
-						<span>Vercel</span>
-						<span>Azure</span>
-						<span>Zustand</span>
-						<span>Redux</span>
+						{badges.map((badge, index) => (
+							<span key={badge + index} className={styles.badge}>
+								<FaTag /> {badge}
+							</span>
+						))}
 					</div>
 				</section>
 
@@ -202,9 +199,7 @@ export default function Home() {
 
 				{/* PROJECTS */}
 				<section className={styles.projects}>
-					<h2 style={{ fontSize: "1.3rem", marginBottom: 12 }}>
-						📁 Projects & Experience
-					</h2>
+					<h2 className={styles.projectsTitle}>📁 Projects & Experience</h2>
 					<div className={styles.projectsGrid}>
 						{demoProjects.map((project) => (
 							<div className={styles.projectCard} key={project.title}>
@@ -220,19 +215,21 @@ export default function Home() {
 								<div className={styles.projectCardContent}>
 									<div className={styles.projectTitle}>{project.title}</div>
 									<div className={styles.projectDesc}>{project.description}</div>
-									<div style={{ display: "flex", gap: 16, marginTop: 8 }}>
+									<div className={styles.projectLinks}>
 										<a
-											className={styles.projectLink}
+											className={styles.projectButton}
 											href={project.source}
 											target="_blank"
 											rel="noopener noreferrer">
-											Source Code
+											<SiGithub />
+											Source
 										</a>
 										<a
-											className={styles.projectLink}
+											className={styles.projectButton}
 											href={project.live}
 											target="_blank"
 											rel="noopener noreferrer">
+											<FiExternalLink />
 											Live Demo
 										</a>
 									</div>
@@ -249,7 +246,7 @@ export default function Home() {
 						Currently accepting freelance projects. Need help with Expo, Azure, or app
 						optimization? Let’s collaborate!
 					</p>
-					<a className={styles.primary} href="/src/pages/bookings/index.tsx">
+					<a className={styles.primary} href="/bookings">
 						Book a Session
 					</a>
 				</section>
@@ -262,11 +259,11 @@ export default function Home() {
 					href="https://github.com/manelisi-mpotulo"
 					target="_blank"
 					rel="noopener noreferrer">
-					<Image src="/next.svg" alt="GitHub" width={20} height={20} />
+					<SiGit size={20} />
 					GitHub
 				</a>
 				<a href="mailto:mpotulom28@gmail.com" target="_blank" rel="noopener noreferrer">
-					<Image src="/file.svg" alt="Email" width={20} height={20} />
+					<BsFillLightningChargeFill size={20} />
 					Email
 				</a>
 			</footer>
