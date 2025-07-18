@@ -28,6 +28,8 @@ import {
 	SiVercel,
 	SiFigma,
 	SiRedux,
+	SiExpo,
+	SiAuth0,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 import { VscAzureDevops, VscCode } from "react-icons/vsc";
@@ -35,16 +37,13 @@ import { FaAws, FaTag } from "react-icons/fa";
 import { BsCode, BsFillLightningChargeFill } from "react-icons/bs";
 import { FiExternalLink } from "react-icons/fi";
 import { DiJava } from "react-icons/di";
+import { RiSupabaseFill } from "react-icons/ri";
+import Link from "next/link";
 
 const skills: { name: string; icon: IconType }[] = [
 	{ name: "JavaScript", icon: SiJavascript },
 	{ name: "TypeScript", icon: SiTypescript },
-	{ name: "Python", icon: SiPython },
 	{ name: "Java", icon: DiJava },
-	{ name: "C#", icon: SiSharp },
-	{ name: "Go", icon: SiGo },
-	{ name: "PHP", icon: SiPhp },
-	{ name: "Ruby", icon: SiRuby },
 	{ name: "HTML5", icon: SiHtml5 },
 	{ name: "CSS3", icon: SiCss3 },
 	{ name: "Sass", icon: SiSass },
@@ -52,11 +51,11 @@ const skills: { name: string; icon: IconType }[] = [
 	{ name: "React", icon: SiReact },
 	{ name: "Next.js", icon: SiNextdotjs },
 	{ name: "Node.js", icon: SiNodedotjs },
-	{ name: "GraphQL", icon: SiGraphql },
-	{ name: "MongoDB", icon: SiMongodb },
 	{ name: "PostgreSQL", icon: SiPostgresql },
 	{ name: "MySQL", icon: SiMysql },
 	{ name: "Git", icon: SiGit },
+	{ name: "React Native", icon: SiReact },
+	{ name: "Expo", icon: SiExpo },
 ];
 
 const resources: { name: string; icon: IconType }[] = [
@@ -64,13 +63,14 @@ const resources: { name: string; icon: IconType }[] = [
 	{ name: "AWS", icon: FaAws },
 	{ name: "GCP", icon: SiGooglecloud },
 	{ name: "Docker", icon: SiDocker },
-	{ name: "Kubernetes", icon: SiKubernetes },
+	{ name: "Supabase", icon: RiSupabaseFill },
 	{ name: "Linux", icon: SiLinux },
 	{ name: "Vercel", icon: SiVercel },
 	{ name: "Figma", icon: SiFigma },
 	{ name: "VS Code", icon: VscCode },
 	{ name: "Zustand", icon: BsCode },
 	{ name: "Redux", icon: SiRedux },
+	{ name: "auth0", icon: SiAuth0 },
 ];
 
 const demoProjects = [
@@ -246,9 +246,9 @@ export default function Home() {
 						Currently accepting freelance projects. Need help with Expo, Azure, or app
 						optimization? Let’s collaborate!
 					</p>
-					<a className={styles.primary} href="/bookings">
+					<Link className={styles.primary} href="/bookme">
 						Book a Session
-					</a>
+					</Link>
 				</section>
 			</main>
 
