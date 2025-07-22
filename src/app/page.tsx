@@ -148,7 +148,7 @@ export default function Home() {
 						<div className={styles.contact}>
 							<a href="mailto:mpotulom28@gmail.com">mpotulom28@gmail.com</a>
 							<span> | </span>
-							<a href="tel:+123456789">+123456789</a>
+							<a href="tel:+123456789">+27796530453</a>
 						</div>
 					</div>
 				</section>
@@ -255,17 +255,20 @@ export default function Home() {
 			{/* FOOTER */}
 			<footer className={styles.footer}>
 				<span>© {new Date().getFullYear()} Manelisi Mpotulo</span>
-				<a
-					href="https://github.com/manelisi-mpotulo"
-					target="_blank"
-					rel="noopener noreferrer">
-					<SiGit size={20} />
-					GitHub
-				</a>
-				<a href="mailto:mpotulom28@gmail.com" target="_blank" rel="noopener noreferrer">
-					<BsFillLightningChargeFill size={20} />
-					Email
-				</a>
+
+				<div className={styles.socials}>
+					<a
+						href="https://github.com/manelisi-mpotulo"
+						target="_blank"
+						rel="noopener noreferrer">
+						<SiGit size={20} />
+						GitHub
+					</a>
+					<a href="mailto:mpotulom28@gmail.com" target="_blank" rel="noopener noreferrer">
+						<BsFillLightningChargeFill size={20} />
+						Email
+					</a>
+				</div>
 			</footer>
 		</div>
 	);
