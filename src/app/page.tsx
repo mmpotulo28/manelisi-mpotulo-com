@@ -4,11 +4,6 @@ import {
 	SiGithub,
 	SiJavascript,
 	SiTypescript,
-	SiPython,
-	SiSharp,
-	SiGo,
-	SiPhp,
-	SiRuby,
 	SiHtml5,
 	SiCss3,
 	SiSass,
@@ -16,14 +11,11 @@ import {
 	SiReact,
 	SiNextdotjs,
 	SiNodedotjs,
-	SiGraphql,
-	SiMongodb,
 	SiPostgresql,
 	SiMysql,
 	SiGit,
 	SiGooglecloud,
 	SiDocker,
-	SiKubernetes,
 	SiLinux,
 	SiVercel,
 	SiFigma,
@@ -76,25 +68,26 @@ const resources: { name: string; icon: IconType }[] = [
 const demoProjects = [
 	{
 		title: "Portfolio Website",
-		image: "/projects/portfolio.png",
+		image: "/images/amsa-logo.png",
 		description: "A modern, responsive portfolio built with Next.js and Tailwind CSS.",
 		source: "https://github.com/manelisi-mpotulo/portfolio",
 		live: "https://manelisi.dev",
 	},
 	{
-		title: "Task Manager App",
-		image: "/projects/taskmanager.png",
+		title: "Onlyfriends Entertainment",
+		image: "/images/logo-long.webp",
 		description:
 			"A full-stack productivity app with authentication, built using React, Node.js, and MongoDB.",
-		source: "https://github.com/manelisi-mpotulo/task-manager",
-		live: "https://taskmanager-demo.vercel.app",
+		source: "https://github.com/mmpotulo28/onlyfriends-ticket",
+		live: "https://onlyfriendsent.com",
 	},
 	{
-		title: "Weather Dashboard",
-		image: "/projects/weather.png",
-		description: "A real-time weather dashboard using OpenWeatherMap API and React Hooks.",
-		source: "https://github.com/manelisi-mpotulo/weather-dashboard",
-		live: "https://weather-demo.vercel.app",
+		title: "Auction Market SA",
+		image: "/images/amsa-logo.png",
+		description:
+			"A real-time online auction marketplace. built in Next js, typescript and shadcn.ui",
+		source: "https://github.com/mmpotulo28/auction_market_sa",
+		live: `https://auctionmarket.tech?ref="portfolio"`,
 	},
 ];
 
@@ -129,18 +122,16 @@ export default function Home() {
 					<div className={styles.avatarGlow}>
 						<Image
 							className={styles.avatar}
-							src="/memoji.png" // Replace with your actual avatar image
+							src="/images/me.jpg" // Replace with your actual avatar image
 							alt="Manelisi Mpotulo Avatar"
 							width={110}
 							height={110}
 							priority
+							objectFit="cover"
 						/>
 					</div>
 					<div>
-						<h1 className={styles.title}>
-							Manelisi Mpotulo
-							<span className={styles.futurist}>.dev</span>
-						</h1>
+						<h1 className={styles.title}>Manelisi Mpotulo</h1>
 						<p className={styles.subtitle}>
 							Software Developer & Technical Problem Solver
 						</p>
